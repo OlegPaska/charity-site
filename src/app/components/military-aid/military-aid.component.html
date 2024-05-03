@@ -1,0 +1,26 @@
+<h1>Military Aid</h1>
+<table class="table table-bordered w-75 mx-auto">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Convoy Date</th>
+        <th scope="col">Group</th>
+        <th scope="col">Name</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Receiver</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let equipment of aid; let i = index">
+        <th scope="row">{{ i + 1 }}</th>
+        <td>
+          <a class="button" routerLink="/trip-details" [queryParams]="{tripDate: equipment.tripDate.toISOString().split('T')[0]}">{{ equipment.tripDate.toISOString().split('T')[0] }}</a> 
+        </td>
+        <td>{{ equipment.category }}</td>
+        <td>{{ equipment.item }}</td>
+        <td>{{ equipment.quantity }}</td>
+        <td>{{ equipment.receiver }}</td>
+      </tr>
+    </tbody>
+  </table>
+  

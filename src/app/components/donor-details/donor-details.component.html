@@ -1,0 +1,20 @@
+<h1>{{donor}}</h1>
+
+<table class="table table-bordered w-75 mx-auto">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Trip Date</th>
+        <th scope="col">Donation</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let donation of donorDetails; let i = index">
+        <th scope="row">{{ i + 1 }}</th>
+        <td>
+          <a class="button" routerLink="/trip-details" [queryParams]="{tripDate: donation.tripDate.toISOString().split('T')[0]}">{{ donation.tripDate.toISOString().split('T')[0] }}</a> 
+        </td>
+        <td>{{ donation.donation }}</td>
+      </tr>
+    </tbody>
+  </table>

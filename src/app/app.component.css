@@ -1,0 +1,14 @@
+.masthead {
+    height: 80vh;
+    min-height: 500px;
+    background-image: url("/assets/img/collage-darkened.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+body {
+  background-color: ghostwhite;
+  padding-top: 65px;
+  min-height: 100%;
+}

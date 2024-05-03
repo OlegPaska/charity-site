@@ -1,0 +1,34 @@
+<div class="card-container py-2" *ngFor="let trip of data">
+  <div class="card w-75 mx-auto d-flex flex-row">
+    <div class="my-auto">
+      <img src="/assets/img/placeholder.png" alt="image" />
+    </div>
+    <div class="card-body">
+      <h2 class="card-title text-center">
+        <a class="button" routerLink="/trip-details" [queryParams]="{tripDate: trip.TripDate.toISOString().split('T')[0]}">{{ trip.Name }}</a> 
+      </h2>
+      <div class="d-flex flex-row justify-content-around">
+        <div class="d-flex flex-column">
+          <p
+            class="pickups-value mx-auto"
+            style="font-size: 3em; color: darkcyan"
+          >
+            {{ trip.PickUpsDonated }}
+          </p>
+          <p style="color: darkcyan">Pickups Donated</p>
+        </div>
+        <div class="d-flex flex-column">
+          <p
+            class="donations value mx-auto"
+            style="font-size: 3em; color: darkolivegreen"
+          >
+            £{{ trip.DonationsRaised }}
+          </p>
+          <p class="donations" style="color: darkolivegreen">
+            Donations Raised
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
